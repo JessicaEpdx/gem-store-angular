@@ -41,17 +41,17 @@
   })
   app.controller('PanelController', function(){
     this.tab = 1;
-    this.hiddenForm = false;
+    this.hiddenForm = true;
     this.selectTab = function(setTab){
       this.tab = setTab;
-    }
-
+    };
     this.isSelected = function(tab){
       return tab === this.tab
-    }
-
+    };
     this.showForm = function(){
-      this.hiddenForm = true
+      this.hiddenForm = false;
+    };
+    this.addReview = function(){
     };
   })
 })();

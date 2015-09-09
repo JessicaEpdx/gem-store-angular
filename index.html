@@ -55,8 +55,19 @@
                 </div>
               </div>
               <div class="panel" ng-show="panel.isSelected(3)">
-                <button ng-show='!panel.hiddenForm' ng-click="panel.showForm()" class="btn btn-default">Add A Review</button><br /><br />
-                <div ng-show='panel.hiddenForm'>FORM</div>
+                <button ng-hide='!panel.hiddenForm' ng-click="panel.showForm()" class="btn btn-default">Add A Review</button><br /><br />
+                <form name="reviewForm" ng-hide='panel.hiddenForm'>
+                  <select class="form-control">
+                    <option val="1">1 Star</option>
+                    <option val="2">2 Star</option>
+                    <option val="3">3 Star</option>
+                    <option val="4">4 Star</option>
+                    <option val="5">5 Star</option>
+                  </select>
+                  <input class="form-control" placeholder="What did you think of this product?"/>
+                  <input class="form-control" placeholder="Whats your email?"/>
+                  <button class="btn btn-danger" ng-click="panel.addReview()">Add Review</button>
+                </form>
                 <div class="well" ng-repeat="review in product.reviews">
                   <h4>{{review.stars}} Stars</h4>
                   <p>{{review.content}}</p>
