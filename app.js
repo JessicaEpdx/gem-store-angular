@@ -22,4 +22,14 @@
   app.controller('StoreController', function() {
     this.products = gems
   })
+  app.controller('PanelController', function(){
+    this.tab = 1;
+    this.selectTab = function(setTab){
+      this.tab = setTab;
+    }
+
+    this.isSelected = function(tab){
+      return tab === this.tab
+    }
+  })
 })();
