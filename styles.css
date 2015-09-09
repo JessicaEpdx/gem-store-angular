@@ -15,5 +15,10 @@ body {
 }
 
 .navbar{
-  background-color:#4BF5CE;
+  background-color:lightgrey;
+}
+
+.well{
+  text-align:center;
+  background-color:white;
 }
