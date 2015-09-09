@@ -24,7 +24,7 @@
         <div ng-show="product.canPurchase" class="well">
           <div class="row">
             <div class="col-sm-6">
-              <img class="icon" ng-src={{product.image}} />
+              <img class="icon" ng-src={{product.images[0]}} />
             </div>
             <div class="col-sm-6">
               <h1>{{product.name}} </h1>
@@ -38,7 +38,7 @@
                   <a href ng-click="panel.selectTab(1)">Description</a>
                 </li>
                 <li ng-class="{ active:panel.isSelected(2)}">
-                  <a href ng-click="panel.selectTab(2)">Specifications</a>
+                  <a href ng-click="panel.selectTab(2)">Photo Gallery</a>
                 </li>
                 <li ng-class="{ active:panel.isSelected(3)}">
                   <a href ng-click="panel.selectTab(3)">Reviews</a>
@@ -49,7 +49,10 @@
                 <h5>{{product.description}}</h5>
               </div>
               <div class="panel" ng-show="panel.isSelected(2)">
-                <h4>Specifications</h4>
+                <h4>Photo Gallery</h4>
+                <div ng-repeat="image in product.images">
+                  <img class="thumbnail" ng-src={{image}} />
+                </div>
               </div>
               <div class="panel" ng-show="panel.isSelected(3)">
                 <h4>Reviews</h4>

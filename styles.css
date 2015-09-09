@@ -22,3 +22,9 @@ body {
   text-align:center;
   background-color:white;
 }
+
+.thumbnail{
+  width:100px;
+  float:left;
+  margin:10px;
+}
