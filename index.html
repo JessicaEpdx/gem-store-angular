@@ -55,7 +55,13 @@
                 </div>
               </div>
               <div class="panel" ng-show="panel.isSelected(3)">
-                <h4>Reviews</h4>
+                <button ng-show='!panel.hiddenForm' ng-click="panel.showForm()" class="btn btn-default">Add A Review</button><br /><br />
+                <div ng-show='panel.hiddenForm'>FORM</div>
+                <div class="well" ng-repeat="review in product.reviews">
+                  <h4>{{review.stars}} Stars</h4>
+                  <p>{{review.content}}</p>
+                  <em>by: {{review.author}}</em>
+                </div>
               </div>
             </section>
 

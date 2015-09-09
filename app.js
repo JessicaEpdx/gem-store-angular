@@ -11,6 +11,12 @@
     ,canPurchase: true
     ,description:'It is so pretty'
     ,soldOut: false
+    ,reviews: [
+      {stars: 3, content:"This was pretty cool but the pictures look better.", author:"Jennifer@gmail.com"}
+      ,{stars: 1, content:"WORST EVER.", author:"BugsyBoi@whatevs.com"}
+      ,{stars: 5, content:"I don't know what these people are talking about, it is GREAT.", author:"FranGonzo@aol.com"}
+
+    ]
     },
     {
     name: 'Black Crystal'
@@ -22,6 +28,10 @@
     ,canPurchase: true
     ,description:'It is so shiny.'
     ,soldOut: false
+    ,reviews: [
+      {stars: 5, content:"My girlfriend loved it!!!", author:"JaysThaMan@gmail.com"}
+      ,{stars: 5, content:"Just beautiful, thanks.", author:"Ilovejay@highschool.com"}
+    ]
     }
   ];
 
@@ -31,6 +41,7 @@
   })
   app.controller('PanelController', function(){
     this.tab = 1;
+    this.hiddenForm = false;
     this.selectTab = function(setTab){
       this.tab = setTab;
     }
@@ -38,5 +49,9 @@
     this.isSelected = function(tab){
       return tab === this.tab
     }
+
+    this.showForm = function(){
+      this.hiddenForm = true
+    };
   })
 })();
