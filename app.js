@@ -1,7 +1,25 @@
 (function(){
-  var gem = { name: 'Azurite', price: 2.95, description:'It is so pretty' };
+  var gems = [
+    {
+    name: 'Azurite'
+    ,price: 2.95
+    ,image:'https://upload.wikimedia.org/wikipedia/commons/9/97/Azurite-Malachite-59275.jpg'
+    ,canPurchase: true
+    ,description:'It is so pretty'
+    ,soldOut: false
+    },
+    {
+    name: 'Black Crystal'
+    ,price: 112.95
+    ,image:"http://40.media.tumblr.com/90f35cb0129ad6d07fbf1dfba0efca54/tumblr_mov4r366681s5jjtzo1_500.png"
+    ,canPurchase: true
+    ,description:'It is so shiny.'
+    ,soldOut: false
+    }
+  ];
+
   var app = angular.module('store', [ ]);
   app.controller('StoreController', function() {
-    this.product = gem
+    this.products = gems
   })
 })();

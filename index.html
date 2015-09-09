@@ -2,12 +2,33 @@
 <html ng-app="store">
   <head>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
   </head>
-  <body>
-    <div ng-controller="StoreController as store">
-      <h1>{{store.product.name}} </h1>
-      <h2> ${{store.product.price}}</h2>
-      <p>{{store.product.description}}</p>
+  <body ng-controller="StoreController as store">
+    <div class="container">
+      <div class="row navbar">
+        <div class="col-sm-4">
+          <img class="logo" src="https://d30y9cdsu7xlg0.cloudfront.net/png/3128-200.png"> GEMSTORE
+        </div>
+        <div class="col-sm-2 nav">
+          Products
+        </div>
+        <div class="col-sm-2 nav">
+          About
+        </div>
+        <div class="col-sm-2">
+        </div>
+      </div>
+      <div ng-repeat="product in store.products">
+        <div ng-show="product.canPurchase" class="col-sm-6">
+          <img class="icon" src={{product.image}} />
+          <h1>{{product.name}} </h1>
+          <h2> ${{product.price}}</h2>
+          <p>{{product.description}}</p>
+          <button ng-show="product.canPurchase" class="btn btn-success">Add to Cart</button>
+        </div>
+      </div>
     </div>
       <script type="text/javascript" src="angular.min.js"></script>
       <script type="text/javascript" src="app.js"></script>
