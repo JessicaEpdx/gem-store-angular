@@ -2,7 +2,7 @@
   var gems = [
     {
     name: 'Azurite'
-    ,price: 2.95
+    ,price: 2
     ,image:'https://upload.wikimedia.org/wikipedia/commons/9/97/Azurite-Malachite-59275.jpg'
     ,canPurchase: true
     ,description:'It is so pretty'
