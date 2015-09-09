@@ -29,17 +29,31 @@
             <div class="col-sm-6">
               <h1>{{product.name}} </h1>
               <button ng-show="product.canPurchase" class="btn btn-warning">Buy for {{product.price | currency}}</button>
-              <h5>{{product.description}}</h5>
             </div>
           </div>
           <div class="row">
-            <section>
+            <section ng-init="tab = 1">
               <ul class="nav nav-pills">
-                <li><a href ng-click="tab = 1">Description</a></li>
-                <li><a href ng-click="tab = 2">Specifications</a></li>
-                <li><a href ng-click="tab = 3">Reviews</a></li>
+                <li ng-class="{ active:tab === 1}">
+                  <a href ng-click="tab = 1">Description</a>
+                </li>
+                <li ng-class="{ active:tab === 2}">
+                  <a href ng-click="tab = 2">Specifications</a>
+                </li>
+                <li ng-class="{ active:tab === 3}">
+                  <a href ng-click="tab = 3">Reviews</a>
+                </li>
               </ul>
-              {{tab}}
+              <div class="panel" ng-show="tab === 1">
+                <h4>Description</h4>
+                <h5>{{product.description}}</h5>
+              </div>
+              <div class="panel" ng-show="tab === 2">
+                <h4>Specifications</h4>
+              </div>
+              <div class="panel" ng-show="tab === 3">
+                <h4>Reviews</h4>
+              </div>
             </section>
 
           </div>
