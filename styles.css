@@ -14,12 +14,9 @@ body {
     padding-top:37px;
 }
 
-.navbar{
-  background-color:lightgrey;
-}
-
 .well{
   background-color:white;
+  padding:40px;
 }
 
 .thumbnail{

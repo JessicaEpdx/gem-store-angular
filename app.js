@@ -101,4 +101,10 @@
       templateUrl: 'navbar.html'
     };
   });
+  app.directive('productCatalog', function(){
+    return{
+      restrict: 'E',
+      templateUrl: 'product-catalog.html'
+    };
+  });
 })();
