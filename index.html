@@ -74,10 +74,10 @@
                   <input ng-model="reviewCtrl.review.author" class="form-control" type= "email" placeholder="Whats your email?" required />
                   <button class="btn btn-danger">Add Review</button>
                 </form>
-                <div class="well" ng-repeat="review in product.reviews">
+                <div class="well" ng-repeat="review in product.reviews | orderBy:'-createdOn'">
                   <h4>Stars: {{review.stars}}</h4>
                   <p>{{review.body}}</p>
-                  <em>by: {{review.author}}</em>
+                  <em>by: {{review.author}} on {{review.createdOn | date}}</em>
                 </div>
               </div>
             </section>
