@@ -12,9 +12,9 @@
     ,description:'It is so pretty'
     ,soldOut: false
     ,reviews: [
-      {stars: 3, content:"This was pretty cool but the pictures look better.", author:"Jennifer@gmail.com"}
-      ,{stars: 1, content:"WORST EVER.", author:"BugsyBoi@whatevs.com"}
-      ,{stars: 5, content:"I don't know what these people are talking about, it is GREAT.", author:"FranGonzo@aol.com"}
+      {stars: 3, body:"This was pretty cool but the pictures look better.", author:"Jennifer@gmail.com"}
+      ,{stars: 1, body:"WORST EVER.", author:"BugsyBoi@whatevs.com"}
+      ,{stars: 5, body:"I don't know what these people are talking about, it is GREAT.", author:"FranGonzo@aol.com"}
 
     ]
     },
@@ -29,8 +29,8 @@
     ,description:'It is so shiny.'
     ,soldOut: false
     ,reviews: [
-      {stars: 5, content:"My girlfriend loved it!!!", author:"JaysThaMan@gmail.com"}
-      ,{stars: 5, content:"Just beautiful, thanks.", author:"Ilovejay@highschool.com"}
+      {stars: 5, body:"My girlfriend loved it!!!", author:"JaysThaMan@gmail.com"}
+      ,{stars: 5, body:"Just beautiful, thanks.", author:"Ilovejay@highschool.com"}
     ]
     }
   ];
@@ -51,7 +51,13 @@
     this.showForm = function(){
       this.hiddenForm = false;
     };
-    this.addReview = function(){
-    };
+  })
+  app.controller('ReviewController', function(){
+    this.review = {};
+    this.addReview = function(product){
+      console.log("here")
+      product.reviews.push(this.review)
+      this.review = {};
+    }
   })
 })();

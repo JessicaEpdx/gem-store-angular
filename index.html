@@ -56,21 +56,29 @@
               </div>
               <div class="panel" ng-show="panel.isSelected(3)">
                 <button ng-hide='!panel.hiddenForm' ng-click="panel.showForm()" class="btn btn-default">Add A Review</button><br /><br />
-                <form name="reviewForm" ng-hide='panel.hiddenForm'>
-                  <select class="form-control">
-                    <option val="1">1 Star</option>
-                    <option val="2">2 Star</option>
-                    <option val="3">3 Star</option>
-                    <option val="4">4 Star</option>
-                    <option val="5">5 Star</option>
+
+                <form name="reviewForm" ng-hide='panel.hiddenForm' ng-controller='ReviewController as reviewCtrl' ng-submit='reviewForm.$valid && reviewCtrl.addReview(product)' novalidate>
+                  <blockquote>
+                    <h4>Stars: {{reviewCtrl.review.stars}}</h4>
+                    <p>{{reviewCtrl.review.body}}</p>
+                    <em>by: {{reviewCtrl.review.author}}</em>
+                  </blockquote>
+                  <select ng-model="reviewCtrl.review.stars" class="form-control" required>
+                    <option value="" disabled selected>Rate this product</option>
+                    <option val="1">1</option>
+                    <option val="2">2</option>
+                    <option val="3">3</option>
+                    <option val="4">4</option>
+                    <option val="5">5</option>
                   </select>
-                  <input class="form-control" placeholder="What did you think of this product?"/>
-                  <input class="form-control" placeholder="Whats your email?"/>
-                  <button class="btn btn-danger" ng-click="panel.addReview()">Add Review</button>
+                  <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="What did you think of this product?" required></textarea>
+                  <input ng-model="reviewCtrl.review.author" class="form-control" type= "email" placeholder="Whats your email?" required />
+                  <div>reviewForm is {{reviewForm.$valid}}</div>
+                  <button class="btn btn-danger">Add Review</button>
                 </form>
                 <div class="well" ng-repeat="review in product.reviews">
-                  <h4>{{review.stars}} Stars</h4>
-                  <p>{{review.content}}</p>
+                  <h4>Stars: {{review.stars}}</h4>
+                  <p>{{review.body}}</p>
                   <em>by: {{review.author}}</em>
                 </div>
               </div>
