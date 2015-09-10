@@ -19,7 +19,6 @@ body {
 }
 
 .well{
-  text-align:center;
   background-color:white;
 }
 
@@ -31,4 +30,16 @@ body {
 
 .row{
   margin-top:20px;
+}
+
+.ng-valid.ng-dirty{
+  border: 2px solid green;
+}
+
+.ng-invalid.ng-dirty{
+  border: 2px solid red;
+}
+
+#borderlessForm{
+  border:none;
 }

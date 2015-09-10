@@ -45,7 +45,6 @@
                 </li>
               </ul>
               <div class="panel" ng-show="panel.isSelected(1)">
-                <h4>Description</h4>
                 <h5>{{product.description}}</h5>
               </div>
               <div class="panel" ng-show="panel.isSelected(2)">
@@ -57,7 +56,7 @@
               <div class="panel" ng-show="panel.isSelected(3)">
                 <button ng-hide='!panel.hiddenForm' ng-click="panel.showForm()" class="btn btn-default">Add A Review</button><br /><br />
 
-                <form name="reviewForm" ng-hide='panel.hiddenForm' ng-controller='ReviewController as reviewCtrl' ng-submit='reviewForm.$valid && reviewCtrl.addReview(product)' novalidate>
+                <form name="reviewForm" id='borderlessForm' ng-hide='panel.hiddenForm' ng-controller='ReviewController as reviewCtrl' ng-submit='reviewForm.$valid && reviewCtrl.addReview(product);panel.hideForm()' novalidate>
                   <blockquote>
                     <h4>Stars: {{reviewCtrl.review.stars}}</h4>
                     <p>{{reviewCtrl.review.body}}</p>
@@ -73,7 +72,6 @@
                   </select>
                   <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="What did you think of this product?" required></textarea>
                   <input ng-model="reviewCtrl.review.author" class="form-control" type= "email" placeholder="Whats your email?" required />
-                  <div>reviewForm is {{reviewForm.$valid}}</div>
                   <button class="btn btn-danger">Add Review</button>
                 </form>
                 <div class="well" ng-repeat="review in product.reviews">

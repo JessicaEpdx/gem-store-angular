@@ -51,11 +51,14 @@
     this.showForm = function(){
       this.hiddenForm = false;
     };
+    this.hideForm = function(){
+      console.log("panel")
+      this.hiddenForm = true;
+    };
   })
   app.controller('ReviewController', function(){
     this.review = {};
     this.addReview = function(product){
-      console.log("here")
       product.reviews.push(this.review)
       this.review = {};
     }
