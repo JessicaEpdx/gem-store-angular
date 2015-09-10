@@ -7,9 +7,7 @@
   </head>
   <body ng-controller="StoreController as store">
     <div class="container">
-      <div class="row navbar">
       <navbar></navbar>
-      </div>
       <div ng-repeat="product in store.products | orderBy:'price'">
         <div ng-show="product.canPurchase" class="well">
           <product-catalog></product-catalog>
