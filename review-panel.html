@@ -1,0 +1,9 @@
+<div class="panel" ng-show="panel.isSelected(3)">
+  <button ng-hide='!panel.hiddenForm' ng-click="panel.showForm()" class="btn btn-default">Add A Review</button><br /><br />
+  <review-form></review-form>
+  <div class="well" ng-repeat="review in product.reviews | orderBy:'-createdOn'">
+    <h4>Stars: {{review.stars}}</h4>
+    <p>{{review.body}}</p>
+    <em>by: {{review.author}} on {{review.createdOn | date}}</em>
+  </div>
+</div>

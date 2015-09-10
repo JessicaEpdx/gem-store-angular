@@ -1,0 +1,18 @@
+<form name="reviewForm" id='borderlessForm' ng-hide='panel.hiddenForm' ng-controller='ReviewController as reviewCtrl' ng-submit='reviewForm.$valid && reviewCtrl.addReview(product);panel.hideForm()' novalidate>
+  <blockquote>
+    <h4>Stars: {{reviewCtrl.review.stars}}</h4>
+    <p>{{reviewCtrl.review.body}}</p>
+    <em>by: {{reviewCtrl.review.author}}</em>
+  </blockquote>
+  <select ng-model="reviewCtrl.review.stars" class="form-control" required>
+    <option value="" disabled selected>Rate this product</option>
+    <option val="1">1</option>
+    <option val="2">2</option>
+    <option val="3">3</option>
+    <option val="4">4</option>
+    <option val="5">5</option>
+  </select>
+  <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="What did you think of this product?" required></textarea>
+  <input ng-model="reviewCtrl.review.author" class="form-control" type= "email" placeholder="Whats your email?" required />
+  <button class="btn btn-danger">Add Review</button>
+</form>

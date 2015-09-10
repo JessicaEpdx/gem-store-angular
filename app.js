@@ -64,4 +64,41 @@
       this.review = {};
     }
   })
+
+  app.directive('reviewForm', function(){
+    return{
+      restrict: 'E',
+      templateUrl: 'review-form.html'
+    };
+  });
+  app.directive('tabNavigation', function(){
+    return{
+      restrict: 'E',
+      templateUrl: 'tab-navigation.html'
+    };
+  });
+  app.directive('descriptionPanel', function(){
+    return{
+      restrict: 'E',
+      templateUrl: 'description-panel.html'
+    };
+  });
+  app.directive('photoPanel', function(){
+    return{
+      restrict: 'E',
+      templateUrl: 'photo-panel.html'
+    };
+  });
+  app.directive('reviewPanel', function(){
+    return{
+      restrict: 'E',
+      templateUrl: 'review-panel.html'
+    };
+  });
+  app.directive('navbar', function(){
+    return{
+      restrict: 'E',
+      templateUrl: 'navbar.html'
+    };
+  });
 })();
