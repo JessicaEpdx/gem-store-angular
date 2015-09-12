@@ -12,17 +12,16 @@
         <div ng-show="product.canPurchase" class="well">
           <product-catalog></product-catalog>
           <div class="row">
-            <section ng-controller="PanelController as panel">
-              <tab-navigation></tab-navigation>
-              <description-panel></description-panel>
-              <photo-panel></photo-panel>
-              <review-panel></review-panel>
-            </section>
+            <panels>
+            </panels>
           </div>
         </div>
       </div>
     </div>
     <script type="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="reviews.js"></script>
+    <script type="text/javascript" src="products.js"></script>
+
   </body>
 </html>

@@ -1,4 +1,5 @@
 (function(){
+  var app = angular.module('store', ['products', 'reviews']);
   var gems = [
     {
     name: 'Azurite'
@@ -34,77 +35,16 @@
     ]
     }
   ];
-
-  var app = angular.module('store', [ ]);
   app.controller('StoreController', function() {
     this.products = gems
-  })
-  app.controller('PanelController', function(){
-    this.tab = 1;
-    this.hiddenForm = true;
-    this.selectTab = function(setTab){
-      this.tab = setTab;
-    };
-    this.isSelected = function(tab){
-      return tab === this.tab
-    };
-    this.showForm = function(){
-      this.hiddenForm = false;
-    };
-    this.hideForm = function(){
-      console.log("panel")
-      this.hiddenForm = true;
-    };
-  })
-  app.controller('ReviewController', function(){
-    this.review = {};
-    this.addReview = function(product){
-      this.review.createdOn = Date.now();
-      product.reviews.push(this.review)
-      this.review = {};
-    }
-  })
+  });
 
-  app.directive('reviewForm', function(){
-    return{
-      restrict: 'E',
-      templateUrl: 'review-form.html'
-    };
-  });
-  app.directive('tabNavigation', function(){
-    return{
-      restrict: 'E',
-      templateUrl: 'tab-navigation.html'
-    };
-  });
-  app.directive('descriptionPanel', function(){
-    return{
-      restrict: 'E',
-      templateUrl: 'description-panel.html'
-    };
-  });
-  app.directive('photoPanel', function(){
-    return{
-      restrict: 'E',
-      templateUrl: 'photo-panel.html'
-    };
-  });
-  app.directive('reviewPanel', function(){
-    return{
-      restrict: 'E',
-      templateUrl: 'review-panel.html'
-    };
-  });
   app.directive('navbar', function(){
     return{
       restrict: 'E',
       templateUrl: 'navbar.html'
     };
   });
-  app.directive('productCatalog', function(){
-    return{
-      restrict: 'E',
-      templateUrl: 'product-catalog.html'
-    };
-  });
+
+
 })();
