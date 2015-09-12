@@ -3,33 +3,33 @@
   app.directive('tabNavigation', function(){
     return{
       restrict: 'E',
-      templateUrl: 'tab-navigation.html'
+      templateUrl: 'views/tab-navigation.html'
     };
   });
 
   app.directive('photoPanel', function(){
     return{
       restrict: 'E',
-      templateUrl: 'photo-panel.html'
+      templateUrl: 'views/photo-panel.html'
     };
   });
   app.directive('reviewPanel', function(){
     return{
       restrict: 'E',
-      templateUrl: 'review-panel.html'
+      templateUrl: 'views/review-panel.html'
     };
   });
   app.directive('descriptionPanel', function(){
     return{
       restrict: 'E',
-      templateUrl: 'description-panel.html'
+      templateUrl: 'views/description-panel.html'
     };
   });
 
   app.directive('panels', function(){
     return{
       restrict: 'E',
-      templateUrl: 'panels.html',
+      templateUrl: 'views/panels.html',
       controller: function(){
         this.tab = 1;
         this.hiddenForm = true;
@@ -55,7 +55,7 @@
   app.directive('productCatalog', function(){
     return{
       restrict: 'E',
-      templateUrl: 'product-catalog.html'
+      templateUrl: 'views/product-catalog.html'
     };
   });
 })();
